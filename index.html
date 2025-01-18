@@ -60,6 +60,79 @@
             <p>سيتم عرض التقرير الأسبوعي هنا.</p>
         </section>
     </main>
+    <div class="section">
+        <h3>القدوم والمغادرة</h3>
+        <label>وقت القدوم:</label>
+        <input type="time" id="arrival-time-2">
+        <label>وقت المغادرة:</label>
+        <input type="time" id="departure-time-2">
+    </div>
+
+    <div class="section">
+        <h3>التأخير</h3>
+        <label>مدة التأخير:</label>
+        <input type="number" id="delay-duration" placeholder="بالدقائق">
+        <label>سبب التأخير:</label>
+        <textarea id="delay-reason-2" placeholder="اذكر السبب"></textarea>
+    </div>
+
+    <div class="section">
+        <h3>الإجازة</h3>
+        <label>نوع الإجازة:</label>
+        <select id="leave-type-2">
+            <option value="مرضية">مرضية</option>
+            <option value="سنوية">سنوية</option>
+            <option value="طارئة">طارئة</option>
+        </select>
+        <label>سبب الإجازة:</label>
+        <textarea id="leave-reason-2" placeholder="اذكر السبب"></textarea>
+    </div>
+
+    <div class="section">
+        <h3>العمل الإضافي</h3>
+        <label>عدد ساعات العمل الإضافي:</label>
+        <input type="number" id="overtime-hours">
+        <label>سبب العمل الإضافي:</label>
+        <textarea id="overtime-reason-2" placeholder="اذكر السبب"></textarea>
+    </div>
+
+    <div id="daily-report-2" class="section">
+        <h3>التقرير اليومي</h3>
+        <!-- يتم تحديث هذا القسم ديناميكيًا -->
+    </div>
+
+    <script>
+    document.getElementById('arrival-time-2').addEventListener('change', updateReport);
+    document.getElementById('departure-time-2').addEventListener('change', updateReport);
+    document.getElementById('delay-duration').addEventListener('input', updateReport);
+    document.getElementById('delay-reason-2').addEventListener('input', updateReport);
+    document.getElementById('leave-type-2').addEventListener('change', updateReport);
+    document.getElementById('leave-reason-2').addEventListener('input', updateReport);
+    document.getElementById('overtime-hours').addEventListener('input', updateReport);
+    document.getElementById('overtime-reason-2').addEventListener('input', updateReport);
+
+    function updateReport() {
+        const arrival = document.getElementById('arrival-time-2').value;
+        const departure = document.getElementById('departure-time-2').value;
+        const delay = document.getElementById('delay-duration').value;
+        const delayReason = document.getElementById('delay-reason-2').value;
+        const leaveType = document.getElementById('leave-type-2').value;
+        const leaveReason = document.getElementById('leave-reason-2').value;
+        const overtime = document.getElementById('overtime-hours').value;
+        const overtimeReason = document.getElementById('overtime-reason-2').value;
+
+        const report = `
+            <h3>التقرير اليومي</h3>
+            <p><strong>وقت القدوم:</strong> ${arrival || 'لم يتم تسجيل'}</p>
+            <p><strong>وقت المغادرة:</strong> ${departure || 'لم يتم تسجيل'}</p>
+            <p><strong>مدة التأخير:</strong> ${delay || 'لا يوجد'} دقيقة - السبب: ${delayReason || 'لا يوجد'}</p>
+            <p><strong>نوع الإجازة:</strong> ${leaveType || 'لا يوجد'} - السبب: ${leaveReason || 'لا يوجد'}</p>
+            <p><strong>عدد ساعات العمل الإضافي:</strong> ${overtime || 'لا يوجد'} - السبب: ${overtimeReason || 'لا يوجد'}</p>
+        `;
+
+        document.getElementById('daily-report-2').innerHTML = report;
+    }
+    </script>
     <footer>
         <p>&copy; 2025 Rami Abu Hilal. All rights reserved.</p>
     </footer>
