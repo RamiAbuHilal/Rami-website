@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>مجموعة العدالة القانونية</title>
+    <style>
+        body {
+            text-align: right;
+            direction: rtl;
+        }
+    </style>
+</head>
+<body>
+    <header dir="rtl">
+        <h1>مجموعة العدالة القانونية</h1>
+        <h2>موظفينا الأعزاء أنتم شركاء النجاح والعطاء</h2>
+        <img src="path_to_logo.png" alt="شعار مجموعة العدالة القانونية" style="width: 150px; height: auto;">
+    </header>
+    <main dir="rtl">
+        <section id="employee-tracking">
+            <h2>تتبع سير العمل اليومي</h2>
+            <h3>اختيار اسم الموظف</h3>
+            <form>
+                <label for="employee-name">اختر اسم الموظف:</label>
+                <select id="employee-name" required>
+                    <option value="محمد عزام">محمد عزام</option>
+                    <option value="منال محمد">منال محمد</option>
+                    <option value="ساجد">ساجد</option>
+                    <option value="منيرة العمر">منيرة العمر</option>
+                    <option value="نوف الشايع">نوف الشايع</option>
+                    <option value="وداد الخالدي">وداد الخالدي</option>
+                    <option value="أروى الحربي">أروى الحربي</option>
+                </select>
+                <h3>نموذج إدخال البيانات</h3>
+                <label for="arrival-time">وقت القدوم:</label>
+                <input type="time" id="arrival-time" required>
+                <label for="departure-time">وقت المغادرة:</label>
+                <input type="time" id="departure-time" required>
+                <label for="delay">التأخير (من الساعة إلى الساعة):</label>
+                <input type="text" id="delay">
+                <label for="delay-reason">سبب التأخير:</label>
+                <input type="text" id="delay-reason">
+                <label for="leave-type">نوع الإجازة:</label>
+                <select id="leave-type">
+                    <option value="personal">شخصية</option>
+                    <option value="sick">مرضية</option>
+                </select>
+                <label for="leave-reason">سبب الإجازة:</label>
+                <input type="text" id="leave-reason">
+                <label for="overtime">العمل الإضافي (من الساعة إلى الساعة):</label>
+                <input type="text" id="overtime">
+                <label for="overtime-reason">سبب العمل الإضافي:</label>
+                <input type="text" id="overtime-reason">
+                <button type="submit">إرسال</button>
+            </form>
+            <button id="daily-report">تقرير يومي</button>
+            <h3>تقرير أسبوعي</h3>
+            <p>سيتم عرض التقرير الأسبوعي هنا.</p>
+        </section>
+    </main>
+    <footer dir="rtl">
+        <p>&copy; 2025 Rami Abu Hilal. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
